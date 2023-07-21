@@ -1,0 +1,9 @@
+.failed-booking-wrapper {
+    margin-top: 50px;
+}
+
+.failed-action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,9 @@
+.success-booking-wrapper {
+    margin-top: 50px;
+}
+
+.success-action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/failed.css' %}">
+{% endblock headers %}
+
+{% block content %}
+    <div class="failed-booking-wrapper">
+        <div class="about-booking">
+            <div class="jumbotron">
+                <h1 class="display-4 text-center">{% trans 'Somthing go wrong with your payments' %}</h1>
+                <p class="lead text-center">{% trans 'Pleace try again' %}</p>
+                    <hr class="my-4">
+                <div class="failed-action-wrapper">
+                    <a href="{% url 'home-page' %}" type="button" class="btn btn-primary btn-lg">{% trans 'Back to home' %}</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

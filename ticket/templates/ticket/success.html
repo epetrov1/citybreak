@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock headers %}
+
+{% block content %}
+    <div class="success-booking-wrapper">
+        <div class="about-booking">
+            <div class="jumbotron">
+                <h1 class="display-4 text-center">{% trans 'Congratilations you have successfully make payments for you day' %}</h1>
+                <p class="lead text-center">{% trans 'We are waiting for you to make amazing tattoo' %}</p>
+                    <hr class="my-4">
+                <div class="success-action-wrapper">
+                    <a href="{% url 'home-page' %}" type="button" class="btn btn-primary btn-lg">{% trans 'Back to home' %}</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

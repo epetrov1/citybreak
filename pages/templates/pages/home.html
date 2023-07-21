@@ -1,0 +1,71 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+<title>Home</title>
+{% endblock headers %}
+{% block content %}
+<div class="Home-page">
+    <!-- Main image, name and slogan of the company -->
+    <header class="masthead" style="height: 80vh;
+        min-height: 500px;
+        background-image: url('{% static 'images/main.jpg' %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="main-header">
+                        <h1 class="display-2"><b></b>{% trans 'Tatto city break Varna' %}</b></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h2 class="tattoo-info-header">{% trans 'Stinger tattoo studio' %}</h2>
+    <div class="tattoo-info-wrapper">
+        <div class="tattoo-info-image-wrapper">
+            <img class="tattoo-info-image" src="{% static 'images/stinger.png' %}"/>
+        </div>
+        <div class="tattoo-info-content">
+            <p class="tattoo-info-paragraf">{% trans 'We are Stinger Tattoo Varna located in Varna, Bulgaria. We work all styles. We use disposable equipment which guarantees 100% sterile and safe environment. ' %}
+                 {% trans 'We are licensed and certified. The price depends on the complexity, the size and time to complete. Browse our gallery. Please contact your tattoo artist for free consultation and book an appointment.' %}</p>
+        </div>
+    </div>
+    <h2 class="varna-info-header">{% trans 'Varna city in Bulgaria' %}</h2>
+    <div class="varna-info-wrapper">
+        <div class="varna-info-content">
+            <p class="varna-info-paragraf">{% trans 'Varna is the third city and a Black sea port and it has a lot to offer. People from all ages will find something to their taste here. Convenient and easy flights from and to Varna Airport. Discover the Bulgarian sea capital with a local expert guide and explore the amusements the city offers. Plan your spear time and see some of the Highlights' %}
+             </p>
+        </div>
+        <div class="varna-info-image">
+            <img class="varna-info-image" src="{% static 'images/varna.jpeg' %}"/>
+        </div>
+        <div class="varna-info-content">
+            <p class="varna-info-paragraf">
+             {% trans 'Explore fabulous bars and clubs for every time of the day. Chill with cocktail and friends, take a break on the beach. Wellness & Spa – mineral waters, massages, yoga, aromatherapy, Varna has well developed infrastructure and is convenient to visit– Varna airport is only 15 min away. The railway station is close to the city center. Varna port has many restaurants and night clubs ready for you. Hotel fees start from just 25 euro a day. Flight tickets from 100 euro' %}</p>
+        </div>
+    </div>
+    <div class="about-booking-wrapper">
+        <div class="about-booking">
+            <div class="jumbotron">
+                <h1 class="display-4 text-center">{% trans 'Book your day' %}</h1>
+                <p class="lead text-center">{% trans 'Book your tattoo appointment over the phone or Whatsapp.' %}</p>
+                <p class="lead text-center">{% trans 'Feel free to consult your tattoo artist about the chosen design or if you haven’t got one -  we will create for you.' %}</p>
+                <div class="whatsapp-wrapper">
+                    <a class="whatsapp" href="https://wa.me/359886332300"><img width=auto height='50px' src="{% static 'images/watsapp.png' %}"/></a>
+                </div>
+                    <hr class="my-4">
+                <div class="action-wrapper">
+                    <p class="lead">{% trans 'Once we agree design and date make payment!' %}</p>
+                    <form action="/ticket/create-checkout-session/" method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-primary btn-lg" type="submit" id="checkout-button">{% trans 'Payment' %}</button> 
+                    </form>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

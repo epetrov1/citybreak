@@ -1,0 +1,22 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block headers %}
+<title>{% trans 'Gallery' %}</title>
+{% endblock headers %}
+{% block content %}
+    <div class="container">
+        <h1 style="color: white" aligne="center">{% trans "Gallery" %}</h1>
+        <div class="row">
+            <div class="col">
+                <div class="card-columns">
+                    {% for gallery in object_list %}
+                        <a href=" {% url 'detail-slug' gallery.pk %}"><div class="card">
+                            <img class="card-img-top" src="{{ gallery.new_image.url }}" alt="{{ gallery.name }}">
+                        </div></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

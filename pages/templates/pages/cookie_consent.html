@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+{% if not request.COOKIES.accept_cookies_ %}
+    <div class="popup-overlay">
+        <div class="cookie-popup">
+            <h5>This website uses cookies to ensure you get the best experience on our website.</h5>
+            <p>For mor informaion about cookie we use click <a href="{% url 'cookie_description' %}"  target="_blank" >here</a>.</p>
+            <button onclick="acceptCookies()">Accept</button>
+            <button onclick="declineCookies()">Declain</button>
+        </div>
+    </div>
+{% endif %}
+
+<script>
+    function acceptCookies() {
+        document.cookie = "accept_cookies_=true;path=/;expires=0";
+        document.querySelector(".popup-overlay").style.display = "none";
+        window.location.href = "{% url 'home-page' %}";  
+    }
+    function declineCookies() {
+        document.cookie = "decline_cookies_=true;path=/;expires=0";
+        document.querySelector(".popup-overlay").style.display = "none";
+        window.location.href = "{% url 'home-page' %}"; 
+    }
+
+</script>
+{% endblock %}

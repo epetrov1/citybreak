@@ -1,0 +1,174 @@
+.main-image {
+    height: 90vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.masthead {
+  width: 100%;
+}
+
+.main-header {
+    margin-top: 280px;
+    text-align: center;
+    color: white;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-header { 
+    animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+.tattoo-info-header {
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.varna-info-header {
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tattoo-info-wrapper {
+    display: flex;
+    gap: 35px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tattoo-info-wrapper {
+  background-color: #e9ecef;
+}
+
+.tattoo-info-wrapper {
+    display: flex;
+    gap: 35px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.varna-info-wrapper {
+    display: flex;
+    gap: 35px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .tattoo-info-wrapper {
+    background-color: #e9ecef;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .tattoo-info-wrapper {
+      display: inline;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .varna-info-wrapper {
+      display: inline;
+    }
+  }
+
+.tattoo-info-image {
+    width: 380px;
+    height: auto;
+}
+
+.varna-info-image {
+    width: 380px;
+    height: auto;
+}
+
+.tattoo-info-wrapper { 
+    animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+.varna-info-wrapper { 
+    animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+.tattoo-info-content {
+    color: black;
+    font-size: 20px;
+    width: 380px;
+}
+
+.varna-info-content {
+    color: white;
+    font-size: 20px;
+    width: 380px;
+}
+
+@media only screen and (max-width: 600px) {
+  .varna-info-content {
+    color: white;
+    font-size: 20px;
+    width: 380px;
+  }
+}
+
+.action-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whatsapp-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

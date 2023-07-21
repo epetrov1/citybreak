@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+{% load i18n %}
+{% block headers %}
+<title>{% trans "Често задавани въпроси" %}</title>
+<meta name="description" content="{% trans "Често задавани въпроси за татуировки и техните отговори." %} ">
+{% endblock headers %}
+{% block content %}
+<br>
+    <div class="container" style="color: white">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-8 col-sm-12 col-md-8">
+              <h1>{% trans "Често задавани въпроси за татуировките." %}</h1>
+                <br>
+                {% for faq in object_list %}
+                  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h2 class="text-light">{{ faq.question }}</h2>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                      <div itemprop="text">
+                        <p>{{ faq.asnwer | safe }}</p>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

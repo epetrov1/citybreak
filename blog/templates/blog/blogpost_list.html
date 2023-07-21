@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+{% load i18n %}
+{% block headers %}
+<title>{% trans "Блог заглавие" %}</title>
+{% endblock headers %}
+{% block content %}
+    <div class="container">
+        <h1 style="color: white" align="center">{% trans "Блог" %}</h1>
+        <div class="row">
+            <div class="col">
+                <div class="card-columns">
+                    {% for obj in object_list %}
+                        <a href="{{ obj.slug }}"><div class="card">
+                            <img class="card-img-top" src="{{ obj.thumbnail.url | safe }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ obj.title | safe }}</h5>
+                            </div>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- This is new cards stayle. need a loop -->
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+<title>{{ chosen_image.name }}</title>
+{% endblock headers %}
+
+{% block content %}
+         <div class="container">
+            <div class="carouselContainer">
+            <div class="carouselMainImage">
+                <img src="{{ chosen_image.new_image.url }}" class="curentImage">
+            </div>
+            <span class="choosenid">{{ chosen_image.id }}</span>
+            {% for image in all_images %}
+                <div class="carouselImgs">
+                    <img src="{{ image.new_image.url }}" class="allimages">                    
+                </div>
+                <span class="allid">{{ image.id }}</span>
+            {% endfor %}
+            
+            <span class="prev" id="prev">
+                {% trans 'Back' %} </span>
+                
+            <span class="next" id="next">
+                    {% trans 'Next' %} </span>
+            </div>
+        </div>    
+    <script src="{% static 'js/slideshow.js' %}"></script>
+{% endblock content %}
